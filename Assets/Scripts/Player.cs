@@ -2,13 +2,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameManager Manager;
     void Start()
     {
-        
+        Manager.playerHealth = 150;
     }
 
-    // Update is called once per frame
     void Update()
     {
         

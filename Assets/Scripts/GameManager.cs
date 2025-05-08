@@ -12,11 +12,13 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public Player player;
-    public Player enemy;
+    public Enemy enemy;
+    public bool playerTurn = true;
 
-    public int playerHealth = 100;
-    public int enemyHealth = 100;
-    public AttackButton attackButton;
+    public int playerHealth;
+    public int enemyHealth;
+    public Button attackButton, defendButton, healButton, finisherButton;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
     private void playerHit()
@@ -26,6 +28,22 @@ public class GameManager : MonoBehaviour
     public void playerAttacks()
     {
         enemyHealth -= 10;
+        playerTurn = false;
+    }
+
+    public void playerDefends()
+    {
+        playerTurn = false;
+    }
+    public void playerHeals()
+    {
+        playerHealth += 10;
+        playerTurn = false;
+    }
+    public void playerFinisher()
+    {
+        enemyHealth -= 100;
+        playerTurn = false;
     }
 
     void Start()
