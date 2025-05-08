@@ -6,6 +6,7 @@ using TMPro;
 using System;
 using UnityEditor.Experimental.GraphView;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     public Player player;
     public Enemy enemy;
     public bool playerTurn = true;
+    public bool hit;
 
     public int playerHealth;
     public int enemyHealth;
@@ -27,8 +29,13 @@ public class GameManager : MonoBehaviour
     }
     public void playerAttacks()
     {
-        enemyHealth -= 10;
+        if (UnityEngine.Random.value <= 0.5)
+        {
+            enemyHealth -= 10;
+            hit = true;
+        }
         playerTurn = false;
+        hit = false;
     }
 
     public void playerDefends()
