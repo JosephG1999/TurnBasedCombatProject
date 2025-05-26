@@ -12,14 +12,20 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    //Game Characters
     public Player player;
     public Enemy enemy;
-    public bool playerTurn = true;
-    public bool hit;
 
+    //Trackers
+    public bool playerTurn = true;
+
+    //Stats
     public int playerHealth;
     public int enemyHealth;
+
+    //Buttons
     public Button attackButton, defendButton, healButton, finisherButton;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
@@ -32,10 +38,8 @@ public class GameManager : MonoBehaviour
         if (UnityEngine.Random.value <= 0.5)
         {
             enemyHealth -= 10;
-            hit = true;
         }
         playerTurn = false;
-        hit = false;
     }
 
     public void playerDefends()
@@ -55,7 +59,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        GameManager.instance = this;     
+        GameManager.instance = this;  
     }
 
     // Update is called once per frame
