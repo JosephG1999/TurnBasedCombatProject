@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
 
     //Trackers
     public bool playerTurn = true;
-    public bool eHit;
 
     //Stats
     public int playerHealth;
@@ -33,7 +32,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         GameManager.instance = this;
-        eHit = eAnimator.GetBool("eHit");
     }
 
     // Update is called once per frame
@@ -47,7 +45,7 @@ public class GameManager : MonoBehaviour
         if (UnityEngine.Random.value <= 0.5)
         {
             enemyHealth -= 10;
-            eAnimator.SetBool("eHit", true);
+            eAnimator.SetTrigger("eHit");
             Debug.Log("!!!ENEMY HIT!!!");
         }
         playerTurn = false;
