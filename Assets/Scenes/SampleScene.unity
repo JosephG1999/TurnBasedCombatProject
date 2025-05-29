@@ -270,9 +270,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f12bbdf4add8db45a8fe77c38bebde4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eAnimator: {fileID: 1663577907}
   player: {fileID: 2127267138}
   enemy: {fileID: 987807141}
   playerTurn: 1
+  eHit: 0
   playerHealth: 100
   enemyHealth: 100
   attackButton: {fileID: 887422157}
@@ -323,6 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78743ef21dafe7441ba8ac2f988d7bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Manager: {fileID: 121790932}
   eAnimator: {fileID: 1663577907}
 --- !u!4 &216267850
 Transform:

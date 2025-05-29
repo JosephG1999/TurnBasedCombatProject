@@ -11,6 +11,7 @@ using System.Security.Cryptography;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public Animator eAnimator;
 
     //Game Characters
     public Player player;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     //Trackers
     public bool playerTurn = true;
+    public bool eHit;
 
     //Stats
     public int playerHealth;
@@ -25,19 +27,28 @@ public class GameManager : MonoBehaviour
 
     //Buttons
     public Button attackButton, defendButton, healButton, finisherButton;
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     
-    private void playerHit()
-    {
 
+
+    void Start()
+    {
+        GameManager.instance = this;
+        eHit = eAnimator.GetBool("eHit");
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
     public void playerAttacks()
     {
         if (UnityEngine.Random.value <= 0.5)
         {
             enemyHealth -= 10;
+            eAnimator.SetBool("eHit", true);
+            Debug.Log("!!!ENEMY HIT!!!");
         }
         playerTurn = false;
     }
@@ -55,16 +66,5 @@ public class GameManager : MonoBehaviour
     {
         enemyHealth -= 100;
         playerTurn = false;
-    }
-
-    void Start()
-    {
-        GameManager.instance = this;  
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
