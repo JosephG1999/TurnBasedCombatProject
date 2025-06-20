@@ -24,31 +24,32 @@ public class GameManager : MonoBehaviour
     public int playerHealth;
     public int enemyHealth;
 
-    //Buttons
+    //UI Elements
+    //-Buttons
     public Button attackButton, defendButton, healButton, finisherButton;
-    
+    public GameObject attackButtonGO, defendButtonGO, healButtonGO, finisherButtonGO;
+    //-Gun Mode
+    public GameObject crosshair;
 
 
+
+    //===========Start=============================================
     void Start()
     {
         GameManager.instance = this;
     }
+    //===========Start=============================================
 
-    // Update is called once per frame
+    //===========Update=============================================
     void Update()
     {
         
     }
+    //===========Update=============================================
 
-    public void playerAttacks()
+    public void gun()
     {
-        if (UnityEngine.Random.value <= 0.5)
-        {
-            enemyHealth -= 10;
-            eAnimator.SetTrigger("eHit");
-            Debug.Log("!!!ENEMY HIT!!!");
-        }
-        playerTurn = false;
+        gunMode();
     }
 
     public void playerDefends()
@@ -64,5 +65,15 @@ public class GameManager : MonoBehaviour
     {
         enemyHealth -= 100;
         playerTurn = false;
+    }
+
+    public void gunMode() 
+    {
+        Debug.Log("GUN MODE!");
+        attackButtonGO.SetActive(false);
+        defendButtonGO.SetActive(false);
+        healButtonGO.SetActive(false);
+        finisherButtonGO.SetActive(false);
+        crosshair.SetActive(true);
     }
 }

@@ -7,8 +7,8 @@ public class Button : MonoBehaviour
     public GameManager Manager;
     public void Attack()
     {
-        Debug.Log("Attacked!");
-        Manager.playerAttacks();
+        Debug.Log("Gun unholstered!");
+        Manager.gun();
     }
 
     public void Defend() 
