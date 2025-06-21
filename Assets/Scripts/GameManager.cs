@@ -29,7 +29,9 @@ public class GameManager : MonoBehaviour
     public Button attackButton, defendButton, healButton, finisherButton;
     public GameObject attackButtonGO, defendButtonGO, healButtonGO, finisherButtonGO;
     //-Gun Mode
-    public GameObject crosshair;
+    public Texture2D crosshair, hand;
+    private Vector2 crosshairHotspot = new Vector2(16, 16);
+    private Vector2 handHotspot = new Vector2(16, 0);
 
 
 
@@ -49,7 +51,8 @@ public class GameManager : MonoBehaviour
 
     public void gun()
     {
-        gunMode();
+        reloadMode();
+        //shootMode();
     }
 
     public void playerDefends()
@@ -67,13 +70,20 @@ public class GameManager : MonoBehaviour
         playerTurn = false;
     }
 
-    public void gunMode() 
+    public void shootMode() 
     {
-        Debug.Log("GUN MODE!");
+        Debug.Log("SHOOT MODE!");
+        Cursor.SetCursor(crosshair, crosshairHotspot, CursorMode.Auto);
+    }
+
+    public void reloadMode() 
+    {
+        Debug.Log("RELOAD MODE!");
         attackButtonGO.SetActive(false);
         defendButtonGO.SetActive(false);
         healButtonGO.SetActive(false);
         finisherButtonGO.SetActive(false);
-        crosshair.SetActive(true);
+        Cursor.SetCursor(hand, handHotspot, CursorMode.Auto);
     }
+
 }
