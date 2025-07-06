@@ -31,8 +31,4 @@ public class Button : MonoBehaviour
     {
         Debug.Log("Removing Casing 1");
     }
-
-    public void Casing1Add() 
-    { 
-    }
 }

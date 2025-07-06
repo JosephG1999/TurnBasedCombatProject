@@ -10,12 +10,18 @@ using System.Security.Cryptography;
 
 public class GameManager : MonoBehaviour
 {
+    //Game Elements
     public static GameManager instance;
     public Animator eAnimator;
+    //Environment
+    public Camera cam;
 
     //Game Characters
     public Player player;
     public Enemy enemy;
+
+    //Rigid Bodies
+    public Rigidbody casing1;
 
     //Trackers
     public bool playerTurn = true;
@@ -50,10 +56,30 @@ public class GameManager : MonoBehaviour
     //===========Update=============================================
     void Update()
     {
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) 
+        {
+            fireRay();
+        }
         
     }
     //===========Update=============================================
 
+    public void fireRay() 
+    { 
+        Ray camRay = cam.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(camRay, out RaycastHit hit)) 
+        {
+            Debug.Log("RAYCAST HIT!");
+            if (hit.collider.tag == "Casings") 
+            {
+                Debug.Log("\tCASINGS HIT!");
+                casing1.useGravity = true;
+                casing1.AddForce(-2, 5, -1, ForceMode.Impulse);
+            }
+        }
+    }
+    
     public void gun()
     {
         reloadMode();
