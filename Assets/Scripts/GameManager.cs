@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     //-Buttons
     public Button attackButton, defendButton, healButton, finisherButton;
     public GameObject attackButtonGO, defendButtonGO, healButtonGO, finisherButtonGO;
+    public GameObject cylinderGO, bulletGO;
     //-Gun Mode
     public Texture2D crosshair, hand;
     private Vector2 crosshairHotspot = new Vector2(16, 16);
@@ -39,6 +40,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         GameManager.instance = this;
+        cylinderGO.SetActive(false);
+        bulletGO.SetActive(false);
     }
     //===========Start=============================================
 
@@ -83,6 +86,8 @@ public class GameManager : MonoBehaviour
         defendButtonGO.SetActive(false);
         healButtonGO.SetActive(false);
         finisherButtonGO.SetActive(false);
+        cylinderGO.SetActive(true);
+        bulletGO.SetActive(true);
         Cursor.SetCursor(hand, handHotspot, CursorMode.Auto);
     }
 
