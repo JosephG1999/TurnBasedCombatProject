@@ -26,4 +26,13 @@ public class Button : MonoBehaviour
         Debug.Log("Finishing Move!");
         Manager.playerFinisher();
     }
+
+    public void Casing1Remove() 
+    {
+        Debug.Log("Removing Casing 1");
+    }
+
+    public void Casing1Add() 
+    { 
+    }
 }
