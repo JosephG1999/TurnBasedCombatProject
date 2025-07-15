@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f12bbdf4add8db45a8fe77c38bebde4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eAnimator: {fileID: 1663577907}
+  AnimationController: {fileID: 216267849}
   cam: {fileID: 330585545}
   player: {fileID: 2127267138}
   enemy: {fileID: 987807141}
@@ -343,6 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Manager: {fileID: 121790932}
   eAnimator: {fileID: 1663577907}
+  bAnimator: {fileID: 1503011371}
 --- !u!4 &216267850
 Transform:
   m_ObjectHideFlags: 0
@@ -1166,6 +1167,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -7946244652993024178, guid: 9e8defb3d1f20b94fa6660621b1e1285, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1503011367}
+    - targetCorrespondingSourceObject: {fileID: -7946244652993024178, guid: 9e8defb3d1f20b94fa6660621b1e1285, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1503011372}
+    - targetCorrespondingSourceObject: {fileID: -7946244652993024178, guid: 9e8defb3d1f20b94fa6660621b1e1285, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1503011371}
   m_SourcePrefab: {fileID: 100100000, guid: 9e8defb3d1f20b94fa6660621b1e1285, type: 3}
 --- !u!1 &832575517
 GameObject:
@@ -1681,6 +1688,45 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1503011371
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503011362}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6e8aa3d60137a1c40aca5dd4d76969d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!111 &1503011372
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503011362}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: e54a17300c7b9724ab63c5676a3fb479, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: e54a17300c7b9724ab63c5676a3fb479, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1 &1594028547 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6479748600546951630, guid: d3aca495f1603bd4ea152e1ed421f41a, type: 3}
@@ -2225,7 +2271,7 @@ GameObject:
   - component: {fileID: 2110506282}
   m_Layer: 5
   m_Name: Casing (1) Button
-  m_TagString: Untagged
+  m_TagString: Casings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

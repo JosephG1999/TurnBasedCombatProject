@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 {
     //Game Elements
     public static GameManager instance;
-    public Animator eAnimator;
+    public AnimController AnimationController;
     //Environment
     public Camera cam;
 
@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("\tCASINGS HIT!");
                 casing1.useGravity = true;
                 casing1.AddForce(-2, 5, -1, ForceMode.Impulse);
+                AnimationController.ejected();
             }
         }
     }
